@@ -13,7 +13,7 @@ router.get(
 
 router.get(
   '/callback',
-  passport.authenticate('spotify', { failureRedirect: '/failed' }),
+  passport.authenticate('spotify', { failureRedirect: '/login/failed' }),
   function (req, res) {
     // Successful authentication, redirect home.
     res.redirect('http://localhost:3000/');
@@ -49,20 +49,26 @@ router.get('/refresh_token', function (req, res) {
   });
 });
 
-router.get('/failed', (req, res) => {
+router.get('/login/failed', (req, res) => {
   res.status(401).json({
     success: false,
     message: 'login failure',
   });
 });
 
-router.get('/success', (req, res) => {
-  res.status(200).json({
-    success: true,
-    message: 'login success',
-    user: req.user,
-    cookies: req.cookies,
-  });
+router.get('/login/success', (req, res) => {
+  if (req.user) {
+    res.status(200).json({
+      success: true,
+      message: 'user logged in',
+      user: req.user,
+    });
+  } else {
+    res.status(401).json({
+      success: false,
+      message: 'user not logged in',
+    });
+  }
 });
 
 router.get('/logout', function (req, res) {

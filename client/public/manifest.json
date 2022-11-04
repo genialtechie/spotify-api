@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Spotify Wrapped 2.0",
+  "name": "Spotify Stats Visualizer",
   "icons": [
     {
       "src": "favicon.ico",

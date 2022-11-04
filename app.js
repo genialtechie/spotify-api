@@ -10,7 +10,6 @@ const session = require('express-session');
 const SpotifyStrategy = require('passport-spotify').Strategy;
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 
 const app = express();
 const port = process.env.PORT || '5000';
@@ -23,7 +22,6 @@ app.use(
     credentials: true,
   })
 );
-
 app.use(
   session({
     secret: 'messidagoat',
@@ -56,7 +54,7 @@ passport.use(
     {
       clientID: process.env.SPOTIFY_CLIENT_ID,
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-      callbackURL: 'http://localhost:5000/callback',
+      callbackURL: process.env.REDIRECT_URI,
     },
     function (accessToken, refreshToken, expires_in, profile, done) {
       User.findOrCreate(
@@ -94,7 +92,6 @@ passport.use(
 );
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 app.listen(port, () => {
   // perform a database connection when server starts
