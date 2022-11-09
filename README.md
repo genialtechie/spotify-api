@@ -16,6 +16,11 @@ This is a MERN stack application that visualizes your Spotify listening history.
 6. Run `npm start` in the client directory
 7. Go to `localhost:3000` in your browser
 8. Click the login button and log in with your Spotify account
-9. Or you can just go to [this website]() and use it there.
+9. Or you can just go to [this website](https://spotify-dash.netlify.app) and use it there.
 
-### Screenshots
+### Features
+
+- Login with Spotify
+- View your top artists and tracks
+- View your listening history // TODO
+- View your listening history by year // TODO
