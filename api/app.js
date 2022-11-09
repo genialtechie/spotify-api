@@ -8,16 +8,34 @@ const User = require('./models/User.js');
 const passport = require('passport');
 const session = require('express-session');
 const SpotifyStrategy = require('passport-spotify').Strategy;
+const serverless = require('serverless-http');
+const path = require('path');
+const MongoStore = require('connect-mongo');
 
 const indexRouter = require('./routes/index');
 
 const app = express();
 const port = process.env.PORT || '5000';
 
+// CONNECT TO MONGODB ATLAS CLUSTER
+try {
+  const uri = process.env.MONGODB_CLIENT_ID;
+  mongoose.connect(
+    uri,
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    },
+    () => console.log('Connected to Mongo Cluster!')
+  );
+} catch (error) {
+  console.error(error);
+}
+
 // MIDDLEWARE
 app.use(
   cors({
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:' + port,
     methods: 'GET,POST,PUT,DELETE',
     credentials: true,
   })
@@ -26,7 +44,10 @@ app.use(
   session({
     secret: 'messidagoat',
     resave: false,
-    saveUninitialized: true,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: process.env.MONGODB_CLIENT_ID,
+    }),
   })
 );
 app.use(logger('dev'));
@@ -91,23 +112,11 @@ passport.use(
   )
 );
 
-app.use('/', indexRouter);
-
-app.listen(port, () => {
-  // perform a database connection when server starts
-  // CONNECT TO MONGODB ATLAS CLUSTER
-  try {
-    const uri = process.env.MONGODB_CLIENT_ID;
-    mongoose.connect(
-      uri,
-      {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      },
-      () => console.log('Connected to Mongo Cluster!')
-    );
-  } catch (error) {
-    console.error(error);
-  }
-  console.log(`Server is running on port: ${port}`);
+app.use('/.netlify/functions/app', indexRouter);
+app.use(express.static(path.join(__dirname, '../client/build')));
+app.use('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
+
+module.exports = app;
+module.exports.handler = serverless(app);

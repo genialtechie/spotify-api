@@ -16,7 +16,7 @@ router.get(
   passport.authenticate('spotify', { failureRedirect: '/login/failed' }),
   function (req, res) {
     // Successful authentication, redirect home.
-    res.redirect('http://localhost:3000/');
+    res.redirect('/');
   }
 );
 
@@ -74,7 +74,7 @@ router.get('/login/success', (req, res) => {
 router.get('/logout', function (req, res) {
   req.logout(function (err) {
     if (err) err;
-    res.redirect('http://localhost:3000/login');
+    else res.redirect('/login');
   });
 });
 

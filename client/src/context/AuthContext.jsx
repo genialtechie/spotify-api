@@ -10,17 +10,17 @@ export const AuthProvider = ({ children }) => {
   });
 
   const login = () => {
-    window.location.href = 'http://localhost:5000/login';
+    window.location.href = '/.netlify/functions/app/login';
   };
 
   const logout = () => {
     localStorage.removeItem('user');
-    window.location.href = 'http://localhost:5000/logout';
+    window.location.href = '/.netlify/functions/app/logout';
   };
 
   useEffect(() => {
     const getUser = () => {
-      fetch('http://localhost:5000/login/success', {
+      fetch('/.netlify/functions/app/login/success', {
         method: 'GET',
         credentials: 'include',
         headers: {
