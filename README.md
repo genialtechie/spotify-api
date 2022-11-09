@@ -1,6 +1,6 @@
 ## Spotify Stats Visualizer
 
-This is a MERN stack application that visualizes your Spotify listening history. It uses the Spotify API to get your listening history and then displays it in a nice way. You can also see your top artists and tracks. It has a simple login system that uses Spotify's OAuth2 API. In order to use this application, you need to have a Spotify account. You can sign up for one [here](https://www.spotify.com/us/signup/).
+This is a MERN stack application that visualizes your Spotify listening history. It uses the Spotify API to get your listening history and then displays it in a nice way. You can also see your top artists and tracks. It has a simple login system that uses Spotify's OAuth2 API. In order to use this application, you need to have a Spotify account. You can sign up for one [here](https://www.spotify.com/us/signup/). You can also check out the live version [here](https://spotify-dash.netlify.app/).
 
 ### How to use
 
@@ -24,3 +24,14 @@ This is a MERN stack application that visualizes your Spotify listening history.
 - View your top artists and tracks
 - View your listening history // TODO
 - View your listening history by year // TODO
+
+### Technologies
+
+- React
+- Node.js
+- Express
+- MongoDB
+- Mongoose
+- Netlify Lambda for serverless functions
+- Spotify API
+- OAuth2 with Passport.js
