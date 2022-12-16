@@ -15,10 +15,11 @@ const TopArtists = () => {
         {
           headers: {
             Authorization: `Bearer ${user.accessToken}`,
+            'Content-Type': 'application/json',
           },
           params: {
             limit: 20,
-            time_range: 'short_term',
+            time_range: 'medium_term',
           },
         }
       );
@@ -34,7 +35,7 @@ const TopArtists = () => {
       setLoading(false);
     };
     fetchData();
-  }, [artists]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <div className="lg:p-10 p-5 flex flex-col justify-center items-center h-full w-full">
       <h1 className="text-2xl text-center font-bold mb-5 lg:pt-0 pt-28">
@@ -43,7 +44,7 @@ const TopArtists = () => {
       {loading ? (
         <Loading />
       ) : (
-        <div className="my-auto h-5/6 w-full overflow-y-auto">
+        <div className="my-auto h-3/4 w-full overflow-y-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {artists.map((artist) => {
               return (

@@ -20,6 +20,7 @@
     "dotenv": "^16.0.3",
     "express": "~4.16.1",
     "express-session": "^1.17.3",
+    "http-proxy-middleware": "^2.0.6",
     "mongoose": "^6.7.2",
     "mongoose-findorcreate": "^3.0.0",
     "morgan": "~1.9.1",

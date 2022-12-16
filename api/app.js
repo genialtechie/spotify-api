@@ -47,6 +47,8 @@ app.use(
     saveUninitialized: false,
     store: MongoStore.create({
       mongoUrl: process.env.MONGODB_CLIENT_ID,
+      touchAfter: 24 * 3600,
+      dbName: 'test',
     }),
   })
 );

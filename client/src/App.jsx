@@ -9,11 +9,11 @@ import RequireAuth from './components/RequireAuth';
 
 function App() {
   return (
-    <div className="p-0 flex flex-col-reverse lg:flex-row h-full w-full overflow-hidden">
+    <div className="p-0 container flex flex-col-reverse lg:flex-row h-screen overflow-hidden">
       <RequireAuth>
         <Navbar />
       </RequireAuth>
-      <div className="w-full h-full">
+      <div className="w-full h-fit">
         <Routes>
           <Route
             path="/"

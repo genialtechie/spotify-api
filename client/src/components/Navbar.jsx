@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div
       id="navbar"
-      className="w-full h-fit flex flex-row lg:block lg:h-full lg:w-fit p-5 relative"
+      className="w-full h-fit flex flex-row lg:block lg:h-full lg:w-fit p-2 relative"
     >
       <h1 className="text-4xl hidden lg:block lg:mb-5">
         Spotify
