@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  functions = "functions"
+  publish = "client/build"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+[dev]
+  port = 9000
