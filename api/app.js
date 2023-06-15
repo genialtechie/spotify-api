@@ -20,7 +20,9 @@ const port = process.env.PORT || '5000';
 // CONNECT TO MONGODB ATLAS CLUSTER
 try {
   const uri = process.env.MONGODB_CLIENT_ID;
-  mongoose.connect(uri, () => console.log('Connected to Mongo Cluster!'));
+  mongoose.connect(uri, { autoIndex: false }, () =>
+    console.log('Connected to Mongo Cluster!')
+  );
 } catch (error) {
   console.error(error);
 }
