@@ -5,10 +5,10 @@ const findOrCreate = require('mongoose-findorcreate');
 const Schema = mongoose.Schema;
 const UserSchema = new Schema({
   name: String,
-  spotifyId: String,
+  spotifyId: { type: String, unique: true, required: true },
   secret: String,
   refreshToken: String,
-  accessToken: String,
+  accessToken: { type: String, unique: true, required: true },
 });
 
 UserSchema.plugin(passportLocalMongoose);

@@ -1,18 +1,21 @@
 {
   "files": {
-    "main.css": "/static/css/main.e32f628a.css",
-    "main.js": "/static/js/main.4ad70c4a.js",
+    "main.css": "/static/css/main.c00070cf.css",
+    "main.js": "/static/js/main.a6e0b96c.js",
+    "static/media/tunetrackr-bg.png": "/static/media/tunetrackr-bg.d09195fc207fca8043cb.png",
+    "static/media/Altform-Regular.ttf": "/static/media/Altform-Regular.7963a08728503ae3a7d0.ttf",
+    "static/media/Altform-Regular.woff2": "/static/media/Altform-Regular.57255edfa714cb2f540d.woff2",
     "static/media/default-user.svg": "/static/media/default-user.05c02cea2d5ec5d7622b0f1dd4bdd943.svg",
     "static/media/artists.svg": "/static/media/artists.f6404896c5a4e7f435c04d70cb479cd1.svg",
     "static/media/profile.svg": "/static/media/profile.bbc7e03853ad2e7faa1738b7b89a98f4.svg",
     "index.html": "/index.html",
     "static/media/songs.svg": "/static/media/songs.b7d03631d81c7796226e644f65763c75.svg",
     "static/media/logout.svg": "/static/media/logout.1354af5376cf91b5b5a0388534ddeceb.svg",
-    "main.e32f628a.css.map": "/static/css/main.e32f628a.css.map",
-    "main.4ad70c4a.js.map": "/static/js/main.4ad70c4a.js.map"
+    "main.c00070cf.css.map": "/static/css/main.c00070cf.css.map",
+    "main.a6e0b96c.js.map": "/static/js/main.a6e0b96c.js.map"
   },
   "entrypoints": [
-    "static/css/main.e32f628a.css",
-    "static/js/main.4ad70c4a.js"
+    "static/css/main.c00070cf.css",
+    "static/js/main.a6e0b96c.js"
   ]
 }

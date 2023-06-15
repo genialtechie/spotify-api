@@ -3,7 +3,83 @@
 @tailwind components;
 
 @tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+@font-face {
+  font-family: 'Altform Regular';
+  src: url('assets/fonts/Altform-Regular.woff2') format('woff2'),
+    url('assets/fonts/Altform-Regular.ttf') format('truetype');
+}
+
 body {
   font-family: 'Secular One', sans-serif;
+}
+
+.altform {
+  font-family: 'Altform Regular';
+}
+
+.heading {
+  display: flex;
+  justify-content: start;
+  align-content: start;
+}
+.block {
+  padding: 0.1em 0.4em;
+}
+.reveal {
+  position: relative;
+}
+.reveal-inner {
+  animation: lr-content 360ms;
+  animation-delay: 1890ms;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+.reveal::before {
+  content: '';
+  background: rgba(34, 197, 94, 1);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  animation: lr-bar 750ms;
+  animation-fill-mode: both;
+  animation-delay: 1500ms;
+  animation-timing-function: cubic-bezier(0.5, 0.25, 0.5, 0.75);
+}
+
+@keyframes lr-bar {
+  0% {
+    transform-origin: center left 0px;
+    transform: scaleX(0);
+  }
+  36% {
+    transform: scaleX(1);
+    transform-origin: center left 0px;
+  }
+  54% {
+    transform: scaleX(1);
+    transform-origin: center right 0px;
+  }
+  90% {
+    transform: scaleX(0);
+    transform-origin: center right 0px;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: center right 0px;
+  }
+}
+
+@keyframes lr-content {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
 }

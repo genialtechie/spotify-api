@@ -9,7 +9,7 @@ import RequireAuth from './components/RequireAuth';
 
 function App() {
   return (
-    <div className="p-0 h-full w-full">
+    <div className="p-0 h-full w-full bg-[url('./assets/img/tunetrackr-bg.png')]">
       <RequireAuth>
         <Navbar />
       </RequireAuth>
